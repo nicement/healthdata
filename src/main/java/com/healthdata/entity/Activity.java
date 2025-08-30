@@ -16,7 +16,7 @@ import java.time.ZoneId;
     @Index(name = "idx_activity_user_from_time", columnList = "user_id, from_time"),
     @Index(name = "idx_activity_recordkey", columnList = "recordkey")
 })
-public class Activity {
+public class Activity extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
