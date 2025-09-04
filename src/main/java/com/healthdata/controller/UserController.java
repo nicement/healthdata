@@ -36,16 +36,16 @@ public class UserController {
     @ApiResponse(responseCode = "200", description = "사용자 등록 성공")
     @ApiResponse(responseCode = "400", description = "잘못된 요청 데이터")
     @RequestBody(
-            description = "사용자 등록 요청 본문",
-            required = true,
-            content = @Content(
-                    mediaType = "application/json",
-                    examples = @ExampleObject(
-                            name = "사용자 등록 예시",
-                            summary = "새로운 사용자 등록",
-                            value = "{\"name\": \"홍길동\", \"nickname\": \"의적\", \"email\": \"hong@example.com\", \"password\": \"password123\"}"
-                    )
-            )
+		description = "사용자 등록 요청 본문",
+		required = true,
+		content = @Content(
+			mediaType = "application/json",
+			examples = @ExampleObject(
+				name = "사용자 등록 예시",
+				summary = "새로운 사용자 등록",
+				value = "{\"name\": \"홍길동\", \"nickname\": \"의적\", \"email\": \"hong@example.com\", \"password\": \"password123\"}"
+			)
+		)
     )
     @PostMapping("/register")
     public ResponseEntity<Void> registerUser(@org.springframework.web.bind.annotation.RequestBody UserDto.RegistrationRequest request) {
@@ -63,16 +63,16 @@ public class UserController {
     @ApiResponse(responseCode = "200", description = "로그인 성공 및 토큰 발급")
     @ApiResponse(responseCode = "401", description = "인증 실패 (잘못된 이메일 또는 비밀번호)")
     @RequestBody(
-            description = "사용자 로그인 요청 본문",
-            required = true,
-            content = @Content(
-                    mediaType = "application/json",
-                    examples = @ExampleObject(
-                            name = "사용자 로그인 예시",
-                            summary = "기존 사용자 로그인",
-                            value = "{\"email\": \"hong@example.com\", \"password\": \"password123\"}"
-                    )
-            )
+		description = "사용자 로그인 요청 본문",
+		required = true,
+		content = @Content(
+			mediaType = "application/json",
+			examples = @ExampleObject(
+				name = "사용자 로그인 예시",
+				summary = "기존 사용자 로그인",
+				value = "{\"email\": \"hong@example.com\", \"password\": \"password123\"}"
+			)
+		)
     )
     @PostMapping("/login")
     public ResponseEntity<UserDto.LoginResponse> loginUser(@org.springframework.web.bind.annotation.RequestBody UserDto.LoginRequest request) {
